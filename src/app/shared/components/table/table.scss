@@ -1,0 +1,26 @@
+.ui-table {
+  width: 100%;
+  min-width: 64rem;
+}
+
+.ui-table .mat-mdc-header-cell {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ui-table .mat-mdc-row:nth-child(even) .mat-mdc-cell {
+  background-color: var(--app-row-alternate);
+}
+
+.ui-table .mat-mdc-row.clickable {
+  cursor: pointer;
+}
+
+.ui-table .mat-mdc-row.clickable:hover .mat-mdc-cell {
+  background-color: var(--app-row-hover);
+}
+
+.ui-table .mat-mdc-row.clickable:focus-visible {
+  outline: 0.1rem solid currentColor;
+  outline-offset: -0.1rem;
+}

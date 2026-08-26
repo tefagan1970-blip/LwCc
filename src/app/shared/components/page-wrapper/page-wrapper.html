@@ -1,0 +1,16 @@
+<div class="page-wrapper">
+  <div class="page-header">
+    <span class="page-title">{{ title() }}</span>
+
+    <div class="user-controls">
+      @if (username()) {
+      <span class="username">Username: {{ username() }}</span>
+      <app-logout />
+      }
+    </div>
+  </div>
+
+  <main class="page-content">
+    <ng-content />
+  </main>
+</div>

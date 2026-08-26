@@ -1,0 +1,18 @@
+<app-page-wrapper title="Login" loadingMessage="Logging In">
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <mat-form-field appearance="outline" class="full-width uname-input">
+      <mat-label>Username</mat-label>
+
+      <input matInput formControlName="username" />
+
+      @if ( loginForm.controls.username.touched && loginForm.controls.username.hasError('required')
+      ) {
+      <mat-error>Username is required.</mat-error>
+      }
+    </mat-form-field>
+
+    <button mat-flat-button type="submit" class="sign-in" [disabled]="loggingIn()">
+      @if (loggingIn()) { Signing in… } @else { Sign in }
+    </button>
+  </form>
+</app-page-wrapper>

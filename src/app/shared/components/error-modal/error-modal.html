@@ -1,0 +1,11 @@
+<div class="error-modal">
+  <mat-icon class="error-icon">error_outline</mat-icon>
+
+  <div class="error-content">
+    <div class="error-title">{{ data.title }}</div>
+
+    <div class="error-message">{{ data.error }}</div>
+  </div>
+
+  <button mat-button type="button" (click)="close()">Close</button>
+</div>

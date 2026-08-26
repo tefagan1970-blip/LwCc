@@ -1,0 +1,20 @@
+<app-page-wrapper
+  [title]="mode() === 'detail' ? `Details for ${userName()} Node: ${nodeName()}` : 'All Users'"
+  loadingMessage="Loading Api Data"
+>
+  <app-date-range-select />
+
+  @if (error()) {
+  <p class="error" role="alert">{{ error() }}</p>
+  } @else if (rows().length === 0 && !loading()) {
+  <p>No results were returned for this date range.</p>
+  } @else if (!loading()) {
+  <app-table
+    [rows]="rows()"
+    [columns]="columns()"
+    [xref]="xref()"
+    [clickable]="mode() !== 'detail'"
+    (rowSelected)="rowClicked($event)"
+  />
+  }
+</app-page-wrapper>

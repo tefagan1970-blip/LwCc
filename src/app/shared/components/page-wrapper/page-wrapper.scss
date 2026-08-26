@@ -1,0 +1,42 @@
+.page-wrapper {
+  padding: 1.4rem;
+
+  .page-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
+
+  .page-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .user-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    flex: 0 0 auto;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .username {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 11rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  app-logout {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
