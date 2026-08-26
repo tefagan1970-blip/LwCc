@@ -112,11 +112,11 @@ The same data page is used for both the main list and detail views.
 
 The main route displays the user list:
 
-    /table1
+    /apidata
 
 Selecting a row navigates to a detail route containing the selected user and machine:
 
-    /table1/:userName/:nodeName
+    /apidata/:userName/:nodeName
 
 The presence of these route parameters determines whether the page operates in list or detail mode.
 
