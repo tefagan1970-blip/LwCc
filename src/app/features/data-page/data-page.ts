@@ -32,10 +32,7 @@ export class DataPage {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
-  /**
-   * Prevents the reactive effect from dispatching the exact
-   * same API request more than once.
-   */
+
   private lastLoadKey: string | null = null;
 
   readonly xref = computed<ApiModel.Xref>(() => this.response()?.xref ?? {});
@@ -88,13 +85,7 @@ export class DataPage {
         return;
       }
 
-      /*
-       * Build a key representing everything that should cause
-       * the API request to change.
-       *
-       * If Angular reevaluates this effect without one of these
-       * values changing, no additional action is dispatched.
-       */
+
       const loadKey = [username, selectedDate, userName ?? '', nodeName ?? ''].join('|');
 
       if (loadKey === this.lastLoadKey) {
@@ -103,11 +94,7 @@ export class DataPage {
 
       this.lastLoadKey = loadKey;
 
-      /*
-       * Dispatch outside Angular's reactive tracking.
-       * NgRx state changes caused by this action should not
-       * accidentally become additional dependencies of this effect.
-       */
+
       untracked(() => {
         if (userName && nodeName) {
           this.store.dispatch(
